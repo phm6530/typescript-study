@@ -13,6 +13,7 @@
     "strictPropertyInitialization": true,
     "noImplicitThis": true,
     "alwaysStrict": true
+    // "sourceMap": true
   },
   "include": ["src/**/*.ts", "src/js/app.ts"],
   "exclude": ["node_modules"]
