@@ -1,16 +1,15 @@
 "use strict";
-var Role;
-(function (Role) {
-    Role[Role["ADMIN"] = 0] = "ADMIN";
-    Role[Role["USER"] = 1] = "USER";
-})(Role || (Role = {}));
-const person = {
-    name: "hyunmin",
-    age: 34,
-    hobbies: ["Coding", "javaSciprt"],
-    role: Role.ADMIN,
+/**
+ * enum
+ * 명명된 상수 집합을 정의할 수 있다.
+ * 예로 useQuery의 key 값 등
+ */
+var OrderStatus;
+(function (OrderStatus) {
+    OrderStatus[OrderStatus["PENDING"] = 0] = "PENDING";
+    OrderStatus[OrderStatus["DELIVERED"] = 1] = "DELIVERED";
+})(OrderStatus || (OrderStatus = {}));
+const isDeliveresd = (status) => {
+    return status === OrderStatus.DELIVERED;
 };
-if (Role.ADMIN === person.role) {
-    console.log("나는 admin 입니다.");
-}
-//# sourceMappingURL=eum.js.map
+console.log(isDeliveresd(OrderStatus.DELIVERED));

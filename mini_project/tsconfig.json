@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ESNext" /* 최신 ES 버전을 사용 */,
     "module": "esnext" /* Vite는 ESM을 기본으로 사용하므로 이 옵션이 유효합니다 */,
-    "lib": ["dom", "esnext"] /* 브라우저 환경에서 사용할 라이브러리 설정 */,
+    "lib": ["dom", "ESNext"] /* 브라우저 환경에서 사용할 라이브러리 설정 */,
     "jsx": "react-jsx" /* React 프로젝트일 경우 JSX 설정 */,
     "rootDir": "./src" /* 소스 파일의 루트 디렉토리 */,
     "outDir": "./dist" /* 출력 디렉토리 (Vite에서 사용되지 않음) */,
@@ -14,6 +14,11 @@
     "isolatedModules": true /* 개별 파일을 모듈로 취급 (Vite에서 필요) */,
     "noEmitOnError": true /*에러시 컴파일 안됨*/,
     "checkJs": true
+    // "paths": {
+    //   "@components/*": ["src/components/*"],
+    //   "@utils/*": ["src/utils/*"],
+    //   "@styles/*": ["src/styles/*"]
+    // }
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]

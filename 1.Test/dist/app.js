@@ -10,4 +10,3 @@ const some = (a, b) => {
     }
 };
 const test = some(1, 5);
-//# sourceMappingURL=app.js.map

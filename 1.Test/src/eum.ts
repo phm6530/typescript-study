@@ -1,15 +1,16 @@
-enum Role {
-  ADMIN = 0,
-  USER = 1,
+/**
+ * enum
+ * 명명된 상수 집합을 정의할 수 있다.
+ * 예로 useQuery의 key 값 등
+ */
+
+enum OrderStatus {
+  PENDING,
+  DELIVERED,
 }
 
-const person = {
-  name: "hyunmin",
-  age: 34,
-  hobbies: ["Coding", "javaSciprt"],
-  role: Role.ADMIN,
+const isDeliveresd = (status: OrderStatus) => {
+  return status === OrderStatus.DELIVERED;
 };
 
-if (Role.ADMIN === person.role) {
-  console.log("나는 admin 입니다.");
-}
+console.log(isDeliveresd(OrderStatus.DELIVERED));
