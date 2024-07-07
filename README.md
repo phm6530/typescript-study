@@ -11,6 +11,8 @@ tsc --init
 
 ## TS_Filter
 
-타입스크립트 필터링
-ㄴ badWordingFilter.ts // 비속어 필터링
-ㄴ
+- badWordingFilter.ts // 비속어 필터링
+
+## Ts_Error
+
+- Error status // 비속어 필터링
