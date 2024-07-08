@@ -22,12 +22,13 @@ const fetchFunc = (data) => __awaiter(void 0, void 0, void 0, function* () {
         throw error;
     }
 });
+const obj = { name: "이름", test: "gg" };
+console.log(obj.name);
 const requestData = {
     name: "hyunmin",
     age: 123,
 };
-const executeFetch = () => __awaiter(void 0, void 0, void 0, function* () { return fetchFunc(requestData); });
-executeFetch()
+fetchFunc(requestData)
     .then((data) => console.log(data))
     .catch((error) => console.log(error));
 //# sourceMappingURL=Promise.js.map

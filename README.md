@@ -18,3 +18,14 @@ tsc --init
 ## Ts_Error
 
 - Error status "에러처리"
+
+## Ts_fetch
+
+- Promise
+- fetch 추상화 + Primise
+- axios - type
+
+```bash
+npm i axios
+npm install --save-dev @types/axios
+```
