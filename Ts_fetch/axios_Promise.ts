@@ -2,6 +2,12 @@ import axios, { AxiosResponse } from "axios";
 
 const url = "https://jsonplaceholder.typicode.com/posts";
 
+const axiosInstance = axios.create({
+  baseURL: "https://jsonplaceholder.typicode.com",
+  timeout: 1000,
+  headers: { "Content-Type": "application/json" },
+});
+
 //기본 단일로 처리할때 axios type
 const fetchAxios = async <T>(url: string): Promise<T> => {
   try {
@@ -43,10 +49,20 @@ const fetchs = async (): Promise<PostLists[]> => {
   return commonAxios<PostLists[]>(async () => axios.get(url));
 };
 
-fetchs()
-  .then((data) => console.log(data))
-  .catch((error) => console.log(error.message));
+// fetchs()
+//   .then((data) => console.log(data))
+//   .catch((error) => console.log(error.message));
 
 // fetchAxios(url)
 //   .then((data) => console.log(data))
 //   .catch((a) => console.log("11:", a.message));
+
+interface Props<T, U = string> {
+  a: T;
+  b: U;
+}
+
+const Obj: Props<string, boolean> = {
+  a: "aa",
+  b: true,
+};
