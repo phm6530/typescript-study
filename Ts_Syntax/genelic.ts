@@ -69,5 +69,45 @@ const getProperty = <T, K extends keyof T>(obj: T, key: K): T[K] => {
   return obj[key];
 };
 
-const object = { value: "hi!" };
+const object = { value: "hi!!!" };
 getProperty(object, "value");
+
+type MyPartial<T, K extends keyof T> = {
+  [P in K]?: T[P];
+} & {
+  [P in Exclude<keyof T, K>]: T[P];
+};
+
+type objsProps = MyPartial<
+  {
+    name: string;
+    age: number;
+    job: string;
+  },
+  "job" | "age" | "name"
+>;
+
+const MyLiteral: objsProps = {};
+type MyPick<T, K> = {
+  [P in K extends keyof T ? K : never]: T[P];
+};
+
+type Results = MyPick<{ a: string; b: number; d: string }, "a" | "b" | "c">;
+
+const TestLiteral: Results = {
+  a: "string",
+  b: 124,
+};
+
+type MyRecord<K extends keyof any, T> = {
+  [P in K]: T;
+};
+
+type PersonProps = {
+  name: string;
+  age: number;
+  job: number;
+};
+const person: MyRecord<"name", string> = {
+  name: "hyunmin",
+};
