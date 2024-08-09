@@ -19,6 +19,4 @@ const persons: MPartial<Person, "job"> = {
 type z = { age?: number };
 type x = { age: number };
 
-const num: z & x = {};
-
 console.log(persons);

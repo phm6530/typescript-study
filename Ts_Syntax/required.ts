@@ -1,4 +1,4 @@
-type RequredUser = Required<UserProp>;
+type RequredUser = Required<UserProps>;
 
 //전체 필수로 변경
 const objs: RequredUser = {
@@ -8,7 +8,7 @@ const objs: RequredUser = {
 };
 
 //Married만 가져오면서 필수로변경
-type PickRequredUser = Required<Pick<UserProp, "married">>;
+type PickRequredUser = Required<Pick<UserProps, "married">>;
 
 const objPick: PickRequredUser = {
   married: true,
@@ -22,4 +22,5 @@ type MyRequired<T, K extends keyof T> = {
 const objPicks: MyRequired<UserProps, "age" | "married"> = {
   name: "sts",
   age: 111,
+  married: true,
 };
