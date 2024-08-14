@@ -3,7 +3,7 @@ type ArritemType<T> = T extends (...arg: any[]) => infer R ? R : never;
 type TestInfer = ArritemType<typeof returnInfer>;
 
 const returnInfer = () => {
-  const arr = [1, "string"];
+  const arr = { idx: 1 };
   return arr;
 };
 
@@ -11,3 +11,6 @@ const returnInfer = () => {
 type ArrType<T> = T extends (infer E)[] ? E : never;
 const inferArr = [1, "string"];
 const booleanConst: ArrType<typeof inferArr> = "String";
+
+type te = () => typeof inferArr;
+type Tt = ArritemType<te>;
