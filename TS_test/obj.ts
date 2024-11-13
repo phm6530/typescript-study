@@ -39,3 +39,17 @@ arrs.forEach((item) => {
 });
 
 console.log(newArr[0].option);
+
+const re = (test: string) => {
+  return {
+    numuber: 1,
+  };
+};
+
+type ReturnTypeOf<T> = T extends (...args: any[]) => infer R ? R : never;
+const funcs = () => 42;
+type Result = ReturnTypeOf<typeof funcs>; // Result는 number
+
+const arrrs = ["string", 1];
+type El<T> = T extends (infer E)[] ? E : never;
+const zzz: El<typeof arrrs> = 1;

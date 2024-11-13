@@ -34,3 +34,15 @@ const ob: MyPartialRequired<UserProps, "age"> = {
   name: "11",
   age: 1,
 };
+
+type MyObj = { name: string; age: number };
+
+type CustumMyPick<T, K extends keyof T> = {
+  [P in K]: T[P];
+};
+
+const tester = () => {
+  const obj: Pick<MyObj, "name"> = { name: "hyunmin" };
+};
+
+tester();
