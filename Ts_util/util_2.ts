@@ -10,7 +10,9 @@ type MyRequired<T> = {
   [key in keyof T]-?: T[key];
 };
 
-type MyRecode = {};
+type MyRecode<K extends keyof any, V> = {
+  [key in K]: V;
+};
 
 type tests = {
   [key: string]: number;

@@ -15,9 +15,11 @@ const obj: tests = {
   job: "ddd",
 };
 
-type OmitType<T, K extends keyof T> = {
-  [key in keyof T]: string;
+type Picks<T, K extends keyof T> = {
+  [key in K]: T[key];
 };
+
+type OmitType<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
 
 type MyOmit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
 
