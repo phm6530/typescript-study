@@ -12,7 +12,7 @@ type ObjB = {
   b: number;
 };
 
-type B = 1 extends number ? number : string;
+type B = ObjB extends ObjA ? number : string;
 
 /**
  * 조건부 타입
